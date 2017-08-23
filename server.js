@@ -48,7 +48,7 @@ var artileone ={
                     ${date}
                 </div>
                 <div>
-                ${content}
+                   ${content}
                 </div>
                 
             </body>
