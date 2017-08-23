@@ -21,42 +21,47 @@ var artileone ={
                     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm .
                       </p> `
    };
-   
-   var htmltemplate=
-       `<html>
-    <head>
-        <title>
-            Ajith | imad
-        </title>
-    </head>
-    <body>
-        <div>
-            <a href="/">Home</a>
-        </div>
-        <hr/>
-        <h3>
-            Article One
-        </h3>
-        <div>
-            Aug 23 2017 
-            Today is the last date to submit the assignment.
-        </div>
-        <p>
-            This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm .
-        </p>
-        <p>
-            This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm .
-        </p>
-        <p>
-            This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm     This is my first html programm .
-        </p>
-    </body>
-</html> `
+  
+  function createtemplate(data){
+      var title=data.title;
+      var heading=data.heading;
+      var date=data.date;
+      var content=data.content;
+      
+          
+           var htmltemplate=
+               `<html>
+            <head>
+                <title>
+                ${Ajith | IMAD}
+                </title>
+            </head>
+            <body>
+                <div>
+                    <a href="/">Home</a>
+                </div>
+                <hr/>
+                <h3>
+                   ${heading}
+                </h3>
+                <div>
+                    ${date}
+                </div>
+                <div>
+                ${content}
+                </div>
+                
+            </body>
+        </html> `
+        
+         ;
+         
+         return htmltemplate;
 
- ;
-
+}
 app.get('/', function (req, res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+   res.send(createtemplate(articleone));
+    
 });
 
 app.get('/', function (req, res) {
